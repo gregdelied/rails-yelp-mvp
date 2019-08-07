@@ -1,0 +1,31 @@
+<% content_for :title do %>Add a Restaurant<% end %>
+<h3>Add a Restaurant</h3>
+<div class="form">
+  <%= form_for(@restaurant) do |form| %>
+    <% if @restaurant.errors.any? %>
+      <ul>
+      <% @restaurant.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true %>
+    <br/>
+    <br/>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+    <br/>
+    <br/>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+    <br/>
+    <br/>
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+    <br>
+    <br>
+    <%= form.submit 'Submit', class: 'submit' %>
+  <% end %>
+</div>
+
